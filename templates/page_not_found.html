@@ -1,0 +1,20 @@
+{% load static %}
+{% load tailwind_tags %}
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% tailwind_css %}
+    <title>Página 404</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon-32x32.png' %}"/>
+  </head>
+  <body>
+    <div class="text-center items-center py-3 px-3 justify-center w-screen h-screen bg-teal-500">
+      <h1 class="text-5xl text-white md:text-5xl lg:text-7xl">Error 404 - Página No Encontrada</h1>
+      <p class="text-3xl text-white underline py-5"><a href="{% url 'visor:index' %}">Ir a Inicio</a></p>
+    </div>
+  </body>
+</html>

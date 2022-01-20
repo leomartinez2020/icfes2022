@@ -1,0 +1,49 @@
+{% extends 'visor/base.html' %}
+
+{% block chartcode %}
+<script>
+  google.charts.load('current', {packages: ['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
+
+  var datos = {{ colegio_json | safe}};
+  var fields = datos[0].fields;
+
+  function drawChart() {
+    // Create the data table.
+    var data = new google.visualization.arrayToDataTable([
+      ["Asignatura", "Promedio", { role: 'style' }],
+      ['Matemáticas', fields.matematicas, 'lightblue'],
+      ['Ciencias', fields.ciencias, 'lightblue'],
+      ['Inglés', fields.ingles, 'lightblue'],
+      ['Lectura', fields.lectura, 'lightblue'],
+      ['Sociales', fields.sociales, 'lightblue'],
+      ['Ponderado', fields.promponderado, 'blue']
+    ]);
+// Annotations
+var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+// Set chart options
+var options = {'title':'Promedio por Asignatura', legend: { position: 'none' },
+                bar: {groupWidth: "85%"}, 'width':700, 'height':400};
+
+// Instantiate and draw our chart, passing in some options.
+var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+chart.draw(view, options);
+}
+</script>
+{% endblock %}
+
+{% block content %}
+  <div class="py-3">
+    <p class="text-lg font-bold">{{ colegio.nombre }} - {{ colegio.municipio }}</p>
+    <p>Periodo: {{ colegio.periodo }}. Evaluados: {{ colegio.evaluados }}. Calendario: {{ colegio.calendario }}. Naturaleza: {{ colegio.naturaleza }}</p>
+    <p>Puntaje Global: {{ colegio.puntajeglobal }}</p>
+    <div id="chart_div" style="width:80%; height:600"></div>
+  </div>
+{% endblock %}
