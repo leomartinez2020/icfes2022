@@ -19,12 +19,12 @@
   <body class="bg-body text-white pb-12">
     <header class="py-6">
     <div class="container flex justify-between items-center mx-auto px-8 md:px-14 lg:px-24 w-full">
+      <div class="text-lg font-bold">Leonardo Martínez</div>
       <div class="hidden md:flex space-x-12 items-center">
         <a href="#" class="text-selected-text">Inicio</a>
         <a href="#work">Portafolio</a>
         <a href="#certificaciones">Certificaciones</a>
         <a href="#hire"><button class="px-6 py-2 bg-theme font-bold">Contacto</button></a>
-        <a href="{% url 'blog:index' %}">Blog</a>
       </div>
       <div class="md:hidden">
         <svg width="26" height="18" viewBox="0 0 26 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 17.5H0.25V14.6667H13V17.5ZM25.75 10.4167H0.25V7.58333H25.75V10.4167ZM25.75 3.33333H13V0.5H25.75V3.33333Z" fill="white"/></svg>
@@ -65,7 +65,29 @@
 
 				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
 
-                                  <!-- Card 1 -->
+                                  <!-- Card 5 -->
+                                  <div class="bg-white rounded-lg overflow-hidden mb-10">
+					<img src="https://myassets.nyc3.digitaloceanspaces.com/images/visorWeb.png" class="w-full hidden md:block bg-nav h-36 lg:h-72 object-cover">
+                                        <div class="p-8 sm:p-9 md:p-7 xl:p-9 text-center">
+                                          <h3 class="text-black font-bold">
+                                           Aplicación Django de visualización de datos
+                                           </h3>
+                                           <p class="mb-7 text-black">
+                                             Muestra los resultados de las pruebas del Icfes con gráficos.
+                                           </p>
+                                           <p class="mb-7 text-black font-bold">
+                                             Herramientas: Django, Postgres, Google Charts
+                                           </p>
+                                           <a
+                                             href="{% url 'visor:index' %}"
+                                             class="inline-block py-2 px-7 border border-black rounded-full text-black font-medium hover:border-primary">
+                                             Ver Detalles
+                                          </a>
+                                        </div>
+                                  </div>
+                                  <!-- End of Card  -->
+
+                                  <!-- Card 2 -->
                                   <div class="bg-white rounded-lg overflow-hidden mb-10">
 					<img src="https://myassets.nyc3.digitaloceanspaces.com/images/HTMLsimulations.png" class="w-full bg-nav h-36 lg:h-72 object-cover">
                                         <div class="p-8 sm:p-9 md:p-7 xl:p-9 text-center">
@@ -87,9 +109,9 @@
                                   </div>
                                   <!-- End of Card  -->
 
-                                  <!-- Card 2 -->
+                                  <!-- Card 3 -->
                                   <div class="bg-white rounded-lg overflow-hidden mb-10">
-					<img src="https://myassets.nyc3.digitaloceanspaces.com/images/cytesting2Web.png" class="w-full bg-nav h-36 lg:h-72 object-cover">
+					<img src="https://myassets.nyc3.digitaloceanspaces.com/images/cytesting-gatsby.png" class="w-full bg-nav h-36 lg:h-72 object-cover">
                                         <div class="p-8 sm:p-9 md:p-7 xl:p-9 text-center">
                                           <h3 class="text-black font-bold">
                                            Creación de contenido: pruebas de software
@@ -109,7 +131,7 @@
                                   </div>
                                   <!-- End of Card  -->
 
-                                  <!-- Card 3 -->
+                                  <!-- Card 4 -->
                                   <div class="bg-white rounded-lg overflow-hidden mb-10">
 					<img src="https://myassets.nyc3.digitaloceanspaces.com/images/algebraWeb.png" class="w-full hidden md:block bg-nav h-36 lg:h-72 object-cover">
                                         <div class="p-8 sm:p-9 md:p-7 xl:p-9 text-center">
@@ -131,7 +153,7 @@
                                   </div>
                                   <!-- End of Card  -->
 
-                                  <!-- Card 4 -->
+                                  <!-- Card 5 -->
                                   <div class="bg-white rounded-lg overflow-hidden mb-10">
 					<img src="https://myassets.nyc3.digitaloceanspaces.com/images/earthquakeWeb.png" class="w-full hidden md:block bg-nav h-36 lg:h-72 object-cover">
                                         <div class="p-8 sm:p-9 md:p-7 xl:p-9 text-center">
@@ -153,21 +175,21 @@
                                   </div>
                                   <!-- End of Card  -->
 
-                                  <!-- Card 5 -->
+                                  <!-- Card 6 -->
                                   <div class="bg-white rounded-lg overflow-hidden mb-10">
-					<img src="https://myassets.nyc3.digitaloceanspaces.com/images/visorWeb.png" class="w-full hidden md:block bg-nav h-36 lg:h-72 object-cover">
+					<img src="https://myassets.nyc3.digitaloceanspaces.com/images/gatsby-blog.png" class="w-full hidden md:block bg-nav h-36 lg:h-72 object-cover">
                                         <div class="p-8 sm:p-9 md:p-7 xl:p-9 text-center">
                                           <h3 class="text-black font-bold">
-                                           Aplicación Django de visualización de datos
+                                           Blog personal
                                            </h3>
                                            <p class="mb-7 text-black">
-                                             Muestra los resultados de las pruebas del Icfes con gráficos.
+                                             Blog de temas tecnológicos en inglés.
                                            </p>
                                            <p class="mb-7 text-black font-bold">
-                                             Herramientas: Django, Postgres, Google Charts
+                                             Herramientas: Gatsby, Netlify
                                            </p>
                                            <a
-                                             href="{% url 'visor:index' %}"
+                                             href="https://leomartinez.gatsbyjs.io/"
                                              class="inline-block py-2 px-7 border border-black rounded-full text-black font-medium hover:border-primary">
                                              Ver Detalles
                                           </a>

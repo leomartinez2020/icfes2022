@@ -8,8 +8,8 @@ urlpatterns = [
     path('', views.ColegioListView.as_view(), name='index'),
     #path('<int:pk>/<slug:slug>', views.ColegioDetailView.as_view(), name='detalle_colegio'),
     path('<int:pk>/<slug:slug>', views.colegio_detail_view, name='detalle_colegio'),
-    path('calendarioA', views.CalendarioAListView.as_view(), name='calendarioA'),
-    path('calendarioB', views.CalendarioBListView.as_view(), name='calendarioB'),
+    path('calendario/<letra>', views.CalendarioListView.as_view(), name='calendario'),
+    #path('calendarioB', views.CalendarioBListView.as_view(), name='calendarioB'),
     path('contacto/', views.contacto, name='contacto'),
     path('recibido/', views.mensaje_recibido, name='mensaje_recibido'),
 ]

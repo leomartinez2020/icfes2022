@@ -8,12 +8,16 @@ from django.urls import reverse
 
 from visor.models import Colegio, Contacto
 
-class CalendarioAListView(ListView):
+class CalendarioListView(ListView):
     model = Colegio
     context_object_name = 'colegios'
-    queryset = Colegio.objects.filter(periodo='2021').filter(promponderado__gt=68).filter(calendario='A').exclude(evaluados__lt=5).order_by('-promponderado')
+    #queryset = Colegio.objects.filter(periodo='2021').filter(promponderado__gt=68).filter(calendario='A').exclude(evaluados__lt=5).order_by('-promponderado')
     template_name = 'visor/index.html'
     paginate_by = 10
+
+    def get_queryset(self):
+        calendario = self.kwargs['letra']
+        return Colegio.objects.filter(periodo='2021').filter(promponderado__gt=68).filter(calendario=calendario).exclude(evaluados__lt=5).order_by('-promponderado')
 
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
@@ -21,25 +25,9 @@ class CalendarioAListView(ListView):
         # Add in a QuerySet of all the objects
         #context['book_list'] = queryset
         context['year'] = '2021'
-        context['calendario'] = 'A'
+        context['calendario'] = self.kwargs['letra']
         return context
 
-
-class CalendarioBListView(ListView):
-    model = Colegio
-    context_object_name = 'colegios'
-    queryset = Colegio.objects.filter(periodo='2021').filter(promponderado__gt=68).filter(calendario='B').exclude(evaluados__lt=5).order_by('-promponderado')
-    template_name = 'visor/index.html'
-    paginate_by = 10
-
-    def get_context_data(self, **kwargs):
-        # Call the base implementation first to get a context
-        context = super().get_context_data(**kwargs)
-        # Add in a QuerySet of all the objects
-        #context['book_list'] = queryset
-        context['year'] = '2021'
-        context['calendario'] = 'B'
-        return context
 
 class ColegioListView(ListView):
     model = Colegio
