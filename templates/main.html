@@ -67,7 +67,7 @@
 
                                   <!-- Card 5 -->
                                   <div class="bg-white rounded-lg overflow-hidden mb-10">
-					<img src="https://myassets.nyc3.digitaloceanspaces.com/images/visorWeb.png" class="w-full hidden md:block bg-nav h-36 lg:h-72 object-cover">
+					<img src="{% static 'images/icfes22.png' %}" class="w-full hidden md:block bg-nav h-36 lg:h-72 object-cover">
                                         <div class="p-8 sm:p-9 md:p-7 xl:p-9 text-center">
                                           <h3 class="text-black font-bold">
                                            Aplicación Django de visualización de datos
@@ -89,7 +89,7 @@
 
                                   <!-- Card 2 -->
                                   <div class="bg-white rounded-lg overflow-hidden mb-10">
-					<img src="https://myassets.nyc3.digitaloceanspaces.com/images/HTMLsimulations.png" class="w-full bg-nav h-36 lg:h-72 object-cover">
+					<img src="{% static 'images/automata22.png' %}" class="w-full bg-nav h-36 lg:h-72 object-cover">
                                         <div class="p-8 sm:p-9 md:p-7 xl:p-9 text-center">
                                           <h3 class="text-black font-bold">
                                            Simulaciones con HTML, canvas y javascript
@@ -111,7 +111,7 @@
 
                                   <!-- Card 3 -->
                                   <div class="bg-white rounded-lg overflow-hidden mb-10">
-					<img src="https://myassets.nyc3.digitaloceanspaces.com/images/cytesting-gatsby.png" class="w-full bg-nav h-36 lg:h-72 object-cover">
+					<img src="{% static 'images/cytesting22.png' %}" class="w-full bg-nav h-36 lg:h-72 object-cover">
                                         <div class="p-8 sm:p-9 md:p-7 xl:p-9 text-center">
                                           <h3 class="text-black font-bold">
                                            Creación de contenido: pruebas de software
@@ -133,7 +133,7 @@
 
                                   <!-- Card 4 -->
                                   <div class="bg-white rounded-lg overflow-hidden mb-10">
-					<img src="https://myassets.nyc3.digitaloceanspaces.com/images/algebraWeb.png" class="w-full hidden md:block bg-nav h-36 lg:h-72 object-cover">
+					<img src="{% static 'images/algebra22.png' %}" class="w-full hidden md:block bg-nav h-36 lg:h-72 object-cover">
                                         <div class="p-8 sm:p-9 md:p-7 xl:p-9 text-center">
                                           <h3 class="text-black font-bold">
                                            Creación de contenido: matemáticas
@@ -155,7 +155,7 @@
 
                                   <!-- Card 5 -->
                                   <div class="bg-white rounded-lg overflow-hidden mb-10">
-					<img src="https://myassets.nyc3.digitaloceanspaces.com/images/earthquakeWeb.png" class="w-full hidden md:block bg-nav h-36 lg:h-72 object-cover">
+					<img src="{% static 'images/earthquake22.png' %}" class="w-full hidden md:block bg-nav h-36 lg:h-72 object-cover">
                                         <div class="p-8 sm:p-9 md:p-7 xl:p-9 text-center">
                                           <h3 class="text-black font-bold">
                                            Mapa de terremotos con React
@@ -177,7 +177,7 @@
 
                                   <!-- Card 6 -->
                                   <div class="bg-white rounded-lg overflow-hidden mb-10">
-					<img src="https://myassets.nyc3.digitaloceanspaces.com/images/gatsby-blog.png" class="w-full hidden md:block bg-nav h-36 lg:h-72 object-cover">
+					<img src="{% static 'images/leoBlog22.png' %}" class="w-full hidden md:block bg-nav h-36 lg:h-72 object-cover">
                                         <div class="p-8 sm:p-9 md:p-7 xl:p-9 text-center">
                                           <h3 class="text-black font-bold">
                                            Blog personal
@@ -229,11 +229,11 @@
 						</div>
 						<div>
 							<label class="text-white block mb-6 text-xl font-bold">Correo</label>
-							<input type="email" class="w-full border border-input-border bg-input px-4 py-4" name="correo">
+							<input type="email" class="w-full border border-input-border bg-input px-4 py-4" name="correo" required>
 						</div>
 						<div>
 							<label class="text-white block mb-6 text-xl font-bold">Mensaje</label>
-							<textarea type="email" class="w-full border border-input-border bg-input px-4 py-4 h-56 resize-none" name="mensaje"></textarea>
+							<textarea type="email" class="w-full border border-input-border bg-input px-4 py-4 h-56 resize-none" name="mensaje" required></textarea>
 						</div>
 						<button class="px-6 py-2 bg-theme text-white font-bold">Enviar</button>
 					</form>

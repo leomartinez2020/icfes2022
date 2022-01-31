@@ -30,3 +30,6 @@ class Colegio(models.Model):
         self.puntajeglobal = round(self.promponderado * 5, 2)
         self.slug = slugify(self.nombre)
         super(Colegio, self).save(*args, **kwargs)
+
+    def get_fields(self, model):
+        return model._meta.get_fields()

@@ -4,6 +4,7 @@ from saber11 import views
 
 urlpatterns = [
     path('', views.ColegioList.as_view(), name='lista-colegios'),
+    path('download/', views.download, name='download'),
     path('<int:pk>/', views.ColegioDetail.as_view()),
 ]
 

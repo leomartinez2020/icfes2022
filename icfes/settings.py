@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'visor.apps.VisorConfig',
     'saber11.apps.Saber11Config',
     'rest_framework',
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -58,10 +59,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+CORS_ALLOWED_ORIGINS = ['http://172.26.180.228:4200', 'http://localhost:4200']
+
 TAILWIND_APP_NAME = 'theme'
 NPM_BIN_PATH = '/usr/bin/npm'
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
